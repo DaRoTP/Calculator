@@ -1,19 +1,14 @@
 package sample;
 
-import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
-import java.awt.event.ActionEvent;
 
 public class Controller implements EventHandler<javafx.event.ActionEvent> {
 
                 //<!===== BUTTONS =====!>
-    // STAGE CONTROL
-    @FXML private Button exit;
-    @FXML private Button minimize;
-    @FXML private Button maximize;
 
     //CALCULATOR NUMBERS
     @FXML private Button one;
@@ -28,7 +23,7 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
     @FXML private Button zero;
     @FXML private Button coma;
 
-    //CALCULATOR FUNCTIONS
+    //CALCULATOR OPERATORS
     @FXML private Button plus;
     @FXML private Button minus;
     @FXML private Button mult;
@@ -41,66 +36,249 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
     @FXML private Button del;
     @FXML private Button c;
     @FXML private Button ce;
-    @FXML private Button fact;
+    @FXML private Button open_par;
+    @FXML private Button close_par;
 
+    //MEMORY BUTTONS
+    @FXML private Button MR;
+    @FXML private Button MC;
+    @FXML private Button M_minus;
+    @FXML private Button M_plus;
+
+
+    //LABELS
+    @FXML private Label history_Label;
+    @FXML private Label result_Label;
+
+    //VARIABLES
+    private Calculus Calculator = new Calculus();
+    private String Number = "";
+
+    private void Check_calculate()
+    {
+        if(Calculator.getArg_1() == 0)
+        {
+            Calculator.setArg_1(Double.parseDouble(Number));
+            Number="0";
+        }
+        else
+        {
+            Calculator.setArg_2(Double.parseDouble(Number));
+            Number="0";
+        }
+
+        if(Calculator.getArg_1() != 0 && Calculator.getArg_2() != 0)
+        {
+            Calculator.setResult(Calculator.calculate(Calculator.getArg_1(),Calculator.getArg_2(),Calculator.getOperator()));
+            if(Calculator.getResult()%1 == 0)
+                result_Label.setText(Integer.toString((int) Calculator.getResult()));
+            else
+                result_Label.setText(Double.toString(Calculator.getResult()));
+            Calculator.setArg_1(Calculator.getResult());
+            Calculator.setArg_2(0);
+        }
+    }
+
+    private static String removeLastChar(String str) {
+        String new_stirng = "";
+        if(str.length() != 0)
+            new_stirng = str.substring(0, str.length() - 1);
+        return new_stirng;
+    }
 
 
     @Override
     public void handle(javafx.event.ActionEvent event) {
         //DIGITS
+
         if(event.getSource() == one)
-            System.out.println("one");
+        {
+            if(Number == "0")
+                    Number = "1";
+            else
+                Number +="1";
+            result_Label.setText(Number);
+        }
         if(event.getSource() == two)
-            System.out.println("one");
+        {
+            if(Number == "0")
+                Number = "2";
+            else
+            Number +="2";
+            result_Label.setText(Number);
+        }
         if(event.getSource() == three)
-            System.out.println("one");
+        {
+            if(Number == "0")
+                Number = "3";
+            else
+                Number +="3";
+            result_Label.setText(Number);
+        }
         if(event.getSource() == four)
-            System.out.println("one");
+        {
+            if(Number == "0")
+                Number = "4";
+            else
+                Number +="4";
+            result_Label.setText(Number);
+        }
         if(event.getSource() == five)
-            System.out.println("one");
+        {
+            if(Number == "0")
+                Number = "5";
+            else
+                Number +="5";
+            result_Label.setText(Number);
+        }
         if(event.getSource() == six)
-            System.out.println("one");
+        {
+            if(Number == "0")
+                Number = "6";
+            else
+                Number +="6";
+            result_Label.setText(Number);
+        }
         if(event.getSource() == seven)
-            System.out.println("one");
+        {
+            if(Number == "0")
+                Number = "7";
+            else
+                Number +="7";
+            result_Label.setText(Number);
+        }
         if(event.getSource() == eight)
-            System.out.println("one");
+        {
+            if(Number == "0")
+                Number = "8";
+            else
+                Number +="8";
+            result_Label.setText(Number);
+        }
         if(event.getSource() == nine)
-            System.out.println("one");
+        {
+            if(Number == "0")
+                Number = "9";
+            else
+                Number +="9";
+            result_Label.setText(Number);
+        }
         if(event.getSource() == zero)
-            System.out.println("one");
+        {
+            if(Number != "0")
+                Number +="0";
+            result_Label.setText(Number);
+        }
+        if(event.getSource() == coma)
+        {
+            Number +=".";
+            result_Label.setText(Number);
+        }
+
 
         //SIGNS
         if(event.getSource() == plus)
-            System.out.println("one");
+        {
+            if(Calculator.getOperator() != "")
+                Check_calculate();
+            Calculator.setOperator("+");
+            Check_calculate();
+        }
         if(event.getSource() == minus)
-            System.out.println("one");
+        {
+            if(Calculator.getOperator() != "")
+                Check_calculate();
+            Calculator.setOperator("-");
+            Check_calculate();
+        }
         if(event.getSource() == mult)
-            System.out.println("one");
+        {
+            if(Calculator.getOperator() != "")
+                Check_calculate();
+            Calculator.setOperator("*");
+            Check_calculate();
+        }
         if(event.getSource() == div)
-            System.out.println("one");
+        {
+            if(Calculator.getOperator() != "")
+                Check_calculate();
+            Calculator.setOperator("/");
+            Check_calculate();
+        }
         if(event.getSource() == mod)
-            System.out.println("one");
+        {
+            if(Calculator.getOperator() != "")
+                Check_calculate();
+            Calculator.setOperator("%");
+            Check_calculate();
+        }
         if(event.getSource() == root)
-            System.out.println("one");
-        if(event.getSource() == equals)
-            System.out.println("one");
+        {
+            Calculator.setOperator("sqrt");
+
+
+        }
         if(event.getSource() == sqr)
-            System.out.println("one");
-        if(event.getSource() == root)
-            System.out.println("one");
+        {
+            Calculator.setOperator("sqr");
+        }
         if(event.getSource() == neg)
-            System.out.println("one");
-        if(event.getSource() == fact)
-            System.out.println("one");
-        if(event.getSource() == coma)
-            System.out.println("one");
+        {
+            Calculator.setOperator("+");
+        }
+        if(event.getSource() == open_par)
+        {
+            Calculator.setOperator("+");
+        }
+        if(event.getSource() == close_par)
+        {
+            Calculator.setOperator("+");
+        }
+        if(event.getSource() == equals)
+        {
+            if(Number != "")
+                Check_calculate();
+            Calculator.setArg_1(Calculator.getResult());
+            Calculator.setArg_2(0);
+            Calculator.setOperator("");
+        }
+
 
         //CONTROLS
         if(event.getSource() == c)
-            System.out.println("one");
+        {
+            Calculator.setOperator("");
+            Calculator.setArg_1(0);
+            Calculator.setArg_2(0);
+            Number = "";
+            result_Label.setText("0");
+        }
         if(event.getSource() == ce)
-            System.out.println("one");
+        {
+            Number = "";
+            result_Label.setText(Number);
+        }
+
         if(event.getSource() == del)
+        {
+            if(Number == "0")
+            {
+                Calculator.setArg_1(0);
+                result_Label.setText("0");
+            }
+            Number = removeLastChar(Number);
+            result_Label.setText(Number);
+        }
+
+
+        //MEMORY
+        if(event.getSource() == MR)
+            System.out.println("one");
+        if(event.getSource() == MC)
+            System.out.println("one");
+        if(event.getSource() == M_minus)
+            System.out.println("one");
+        if(event.getSource() == M_plus)
             System.out.println("one");
 
 

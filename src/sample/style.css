@@ -1,0 +1,89 @@
+.Cnumbers{
+    -fx-background-color: #105571;
+	-fx-font-weight: bold;
+	-fx-font-size: 30;
+	-fx-background-radius: 0;
+	-fx-text-fill: white;
+}
+.Cnumbers:hover{
+    -fx-background-color: white;
+	-fx-font-weight: bold;
+	-fx-font-size: 30;
+	-fx-background-radius: 0;
+	-fx-text-fill: #105571;
+	-fx-border_radius: 0;
+	-fx-border-color: #105571;
+	-fx-border-width: 3;
+}
+.Cnumbers:pressed{
+    -fx-border-color: #3594ba;
+    -fx-text-fill: #3594ba;
+}
+.Coperators{
+    -fx-background-color: #0a2b51;
+    -fx-background-radius: 0;
+	-fx-font-weight: bold;
+	-fx-font-size: 30;
+	-fx-text-fill: white;
+}
+.Coperators:hover{
+    -fx-background-color: white;
+	-fx-font-weight: bold;
+	-fx-font-size: 30;
+	-fx-background-radius: 0;
+	-fx-text-fill: #0a2b51;
+	-fx-border_radius: 0;
+	-fx-border-color: #0a2b51;
+	-fx-border-width: 3;
+}
+.Coperators:pressed{
+    -fx-border-color: #18497f;
+    -fx-text-fill: #18497f;
+}
+.Mbuttons{
+    -fx-background-color: #bdbdbd;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+}
+.Mbuttons:hover{
+    -fx-background-color: #848484;
+}
+.Mbuttons:pressed{
+    -fx-background-color: #6f6f6f;
+    -fx-text-fill: #bdbdbd;
+}
+
+#equals{
+    -fx-background-color: #f57818;
+    -fx-background-radius: 0;
+	-fx-font-weight: bold;
+	-fx-font-size: 30;
+	-fx-border-radius: 0;
+    -fx-border-color: #f57818;
+}
+
+#equals:hover{
+    -fx-background-color: white;
+	-fx-font-weight: bold;
+	-fx-font-size: 30;
+	-fx-background-radius: 0;
+	-fx-text-fill: #f57818;
+	-fx-border_radius: 0;
+	-fx-border-color: #f57818;
+	-fx-border-width: 3;
+}
+#equals:pressed{
+
+    -fx-border-color: #e7a937;
+    -fx-text-fill: #e7a937;
+}
+
+#history_Label{
+    -fx-background-color: #bdbdbd;
+    -fx-background-radius: 5;
+}
+#result_Label{
+    -fx-background-color: #e6e6e6;
+    -fx-background-radius: 5;
+}
