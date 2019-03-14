@@ -1,66 +1,66 @@
 #anchor{
-    -fx-background-color: white;
+    -fx-background-color: #2d2d30;
 }
 
 .Cnumbers{
-    -fx-background-color: #105571;
+    -fx-background-color: #90cbbd;
 	-fx-font-weight: bold;
 	-fx-font-size: 30;
 	-fx-background-radius: 0;
-	-fx-text-fill: white;
+	-fx-text-fill: #2d2d30;
 }
 .Cnumbers:hover{
-    -fx-background-color: white;
+    -fx-background-color: #2d2d30;
 	-fx-font-weight: bold;
 	-fx-font-size: 30;
 	-fx-background-radius: 0;
-	-fx-text-fill: #105571;
+	-fx-text-fill: #90cbbd;
 	-fx-border_radius: 0;
-	-fx-border-color: #105571;
+	-fx-border-color: #90cbbd;
 	-fx-border-width: 3;
 }
 .Cnumbers:pressed{
-    -fx-border-color: #3594ba;
-    -fx-text-fill: #3594ba;
+    -fx-border-color: #c3f5e9;
+    -fx-text-fill: #c3f5e9;
 }
 .Coperators{
-    -fx-background-color: #0a2b51;
+    -fx-background-color: #556fa0;
     -fx-background-radius: 0;
 	-fx-font-weight: bold;
 	-fx-font-size: 30;
-	-fx-text-fill: white;
+	-fx-text-fill: #2d2d30;
 }
 .Coperators:hover{
-    -fx-background-color: white;
+    -fx-background-color: #2d2d30;
 	-fx-font-weight: bold;
 	-fx-font-size: 30;
 	-fx-background-radius: 0;
-	-fx-text-fill: #0a2b51;
+	-fx-text-fill: #556fa0;
 	-fx-border_radius: 0;
-	-fx-border-color: #0a2b51;
+	-fx-border-color: #556fa0;
 	-fx-border-width: 3;
 }
 .Coperators:pressed{
-    -fx-border-color: #18497f;
-    -fx-text-fill: #18497f;
+    -fx-border-color: #6f8dc4;
+    -fx-text-fill: #6f8dc4;
 }
 .Mbuttons{
-    -fx-background-color: #bdbdbd;
+    -fx-background-color: #525c6d;
     -fx-background-radius: 20;
     -fx-font-weight: bold;
     -fx-font-size: 15;
 }
 .Mbuttons:hover{
-    -fx-background-color: #848484;
+    -fx-background-color: #424b5a;
 }
 .Mbuttons:pressed{
-    -fx-background-color: #6f6f6f;
+    -fx-background-color: #373e4a;
     -fx-text-fill: #bdbdbd;
 }
 
 #Night_mode
 {
-    -fx-background-color: #bdbdbd;
+    -fx-background-color: #525c6d;
     -fx-background-radius: 20;
     -fx-font-weight: bold;
     -fx-font-size: 15;
@@ -69,35 +69,42 @@
 
 
 #equals{
-    -fx-background-color: #f57818;
+    -fx-background-color: #e78235;
     -fx-background-radius: 0;
 	-fx-font-weight: bold;
 	-fx-font-size: 30;
 	-fx-border-radius: 0;
-    -fx-border-color: #f57818;
+    -fx-border-color: #e78234;
+    -fx-text-fill: #2d2d30;
 }
 
 #equals:hover{
-    -fx-background-color: white;
+    -fx-background-color: #2d2d30;
 	-fx-font-weight: bold;
 	-fx-font-size: 30;
 	-fx-background-radius: 0;
-	-fx-text-fill: #f57818;
+	-fx-text-fill: #e78235;
 	-fx-border_radius: 0;
-	-fx-border-color: #f57818;
+	-fx-border-color: #e78235;
 	-fx-border-width: 3;
 }
 #equals:pressed{
 
-    -fx-border-color: #e7a937;
-    -fx-text-fill: #e7a937;
+    -fx-border-color: #fc9444;
+    -fx-text-fill: #fc9444;
 }
 
 #history_Label{
-    -fx-background-color: #bdbdbd;
+    -fx-background-color: #36373a;
     -fx-background-radius: 5;
+    -fx-text-fill: #cfcfcf;
 }
 #result_Label{
-    -fx-background-color: #e6e6e6;
+    -fx-background-color: #3c3d41;
     -fx-background-radius: 5;
+    -fx-text-fill: white;
+}
+#operator_Label
+{
+    -fx-text-fill: white;
 }

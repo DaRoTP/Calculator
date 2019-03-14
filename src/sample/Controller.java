@@ -1,14 +1,22 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.layout.AnchorPane;
 
 
 public class Controller implements EventHandler<javafx.event.ActionEvent> {
 
                 //<!===== BUTTONS =====!>
+
+    //ADDITIONAL STUFF
+    @FXML private ToggleButton Night_mode;
+    @FXML private AnchorPane anchor;
 
     //CALCULATOR NUMBERS
     @FXML private Button one;
@@ -49,124 +57,171 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
     //LABELS
     @FXML private Label history_Label;
     @FXML private Label result_Label;
+    @FXML private Label operator_Label;
 
     //VARIABLES
     private Calculus Calculator = new Calculus();
     private String Number = "";
+    private String History = "";
 
-    private void Check_calculate()
+    //STYLE SHEETS
+    private String Current_StyleSheet = "sample/style.css";
+    private String Theme_Default = "sample/style.css";
+    private String Theme_Dark = "sample/style_2.css";
+
+
+
+    private void solve()
     {
-        if(Calculator.getArg_1() == 0)
+        if(Calculator.getArg_1() != 0 && Calculator.getArg_2() == 0)
         {
-            Calculator.setArg_1(Double.parseDouble(Number));
-            Number="0";
+            if(Number == "")
+            {
+                if (Calculator.getOperator() == "/" || Calculator.getOperator() == "*")
+                    Calculator.setArg_2(1);
+                else if(Calculator.getOperator() == "%")
+                    Calculator.setArg_2(Calculator.getArg_1()+1);
+                else
+                    Calculator.setArg_2(0);
+            }
+            else
+                Calculator.setArg_2(Double.parseDouble(Number));
+
+            history_int_check();
+
+        }
+        else if(Calculator.getArg_1() == 0)
+        {
+            if(Number == "")
+                Calculator.setArg_1(0);
+            else
+                Calculator.setArg_1(Double.parseDouble(Number));
+            if (Calculator.getOperator() == "/" || Calculator.getOperator() == "*")
+                Calculator.setArg_2(1);
+            if(Calculator.getOperator() == "%")
+                Calculator.setArg_2(Calculator.getArg_1()+1);
+        }
+
+        Number = "";
+        Calculator.setArg_1(Calculator.calculate(Calculator.getArg_1(),Calculator.getArg_2(),Calculator.getOperator()));
+        Calculator.setArg_2(0);
+        if(Calculator.getArg_1() % 1 == 0)
+            result_Label.setText(Integer.toString((int)Calculator.getArg_1()));
+        else
+            result_Label.setText(Double.toString(Calculator.getArg_1()));
+        history_Label.setText(History);
+    }
+
+    private void history_int_check()
+    {
+        if(Calculator.getArg_1() % 1 == 0)
+        {
+            History = (int) Calculator.getArg_1() + Calculator.getOperator();
+            if (Calculator.getArg_2() % 1 == 0)
+                History += (int) Calculator.getArg_2();
+            else
+                History += Calculator.getArg_2();
         }
         else
         {
-            Calculator.setArg_2(Double.parseDouble(Number));
-            Number="0";
-        }
-
-        if(Calculator.getArg_1() != 0 && Calculator.getArg_2() != 0)
-        {
-            Calculator.setResult(Calculator.calculate(Calculator.getArg_1(),Calculator.getArg_2(),Calculator.getOperator()));
-            if(Calculator.getResult()%1 == 0)
-                result_Label.setText(Integer.toString((int) Calculator.getResult()));
+            History = Calculator.getArg_1() + Calculator.getOperator();
+            if (Calculator.getArg_2() % 1 == 0)
+                History += (int) Calculator.getArg_2();
             else
-                result_Label.setText(Double.toString(Calculator.getResult()));
-            Calculator.setArg_1(Calculator.getResult());
-            Calculator.setArg_2(0);
+                History += Calculator.getArg_2();
         }
     }
 
-    private static String removeLastChar(String str) {
+    //REMOVE LAST CHARACTER FROM THE STRING
+    private static String removeLastChar(String str)
+    {
         String new_stirng = "";
         if(str.length() != 0)
             new_stirng = str.substring(0, str.length() - 1);
         return new_stirng;
+    }
+    //INSERT DIGIT INTO NUMEBR
+    private void insert_digit(String digit)
+    {
+        if(Number == "0")
+            Number = digit;
+        else
+            Number += digit;
+    }
+
+    @FXML
+    public void change_modes(ActionEvent event)
+    {
+        Scene scene = (Scene)(anchor.getScene());
+        if(Night_mode.isSelected())
+        {
+            scene.getStylesheets().remove(Current_StyleSheet);
+            scene.getStylesheets().add(Theme_Dark);
+            Current_StyleSheet = Theme_Dark;
+            Night_mode.setStyle("-fx-background-color: #e7a937;");
+        }
+        else
+        {
+            scene.getStylesheets().remove(Current_StyleSheet);
+            scene.getStylesheets().add(Theme_Default);
+            Current_StyleSheet = Theme_Default;
+            Night_mode.setStyle("-fx-background-color: #bdbdbd;");
+        }
+
     }
 
 
     @Override
     public void handle(javafx.event.ActionEvent event) {
         //DIGITS
-
         if(event.getSource() == one)
         {
-            if(Number == "0")
-                    Number = "1";
-            else
-                Number +="1";
+            insert_digit("1");
             result_Label.setText(Number);
         }
         if(event.getSource() == two)
         {
-            if(Number == "0")
-                Number = "2";
-            else
-            Number +="2";
+            insert_digit("2");
             result_Label.setText(Number);
         }
         if(event.getSource() == three)
         {
-            if(Number == "0")
-                Number = "3";
-            else
-                Number +="3";
+            insert_digit("3");
             result_Label.setText(Number);
         }
         if(event.getSource() == four)
         {
-            if(Number == "0")
-                Number = "4";
-            else
-                Number +="4";
+            insert_digit("4");
             result_Label.setText(Number);
         }
         if(event.getSource() == five)
         {
-            if(Number == "0")
-                Number = "5";
-            else
-                Number +="5";
+            insert_digit("5");
             result_Label.setText(Number);
         }
         if(event.getSource() == six)
         {
-            if(Number == "0")
-                Number = "6";
-            else
-                Number +="6";
+            insert_digit("6");
             result_Label.setText(Number);
         }
         if(event.getSource() == seven)
         {
-            if(Number == "0")
-                Number = "7";
-            else
-                Number +="7";
+            insert_digit("7");
             result_Label.setText(Number);
         }
         if(event.getSource() == eight)
         {
-            if(Number == "0")
-                Number = "8";
-            else
-                Number +="8";
+            insert_digit("8");
             result_Label.setText(Number);
         }
         if(event.getSource() == nine)
         {
-            if(Number == "0")
-                Number = "9";
-            else
-                Number +="9";
+            insert_digit("9");
             result_Label.setText(Number);
         }
         if(event.getSource() == zero)
         {
-            if(Number != "0")
-                Number +="0";
+            insert_digit("0");
             result_Label.setText(Number);
         }
         if(event.getSource() == coma)
@@ -177,54 +232,72 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
 
 
         //SIGNS
+        if(event.getSource() == equals)
+        {
+            if(Number == "")
+                Calculator.setArg_2(0);
+            else
+                Calculator.setArg_2(Double.parseDouble(Number));
+            Number = "";
+            Calculator.setArg_1(Calculator.calculate(Calculator.getArg_1(),Calculator.getArg_2(),Calculator.getOperator()));
+
+            history_int_check();
+
+            Calculator.setArg_2(0);
+            if(Calculator.getArg_1() % 1 == 0)
+                result_Label.setText(Integer.toString((int)Calculator.getArg_1()));
+            else
+                result_Label.setText(Double.toString(Calculator.getArg_1()));
+            history_Label.setText(History);
+        }
         if(event.getSource() == plus)
         {
-            if(Calculator.getOperator() != "")
-                Check_calculate();
             Calculator.setOperator("+");
-            Check_calculate();
+            solve();
+            operator_Label.setText("+");
         }
+
         if(event.getSource() == minus)
         {
-            if(Calculator.getOperator() != "")
-                Check_calculate();
             Calculator.setOperator("-");
-            Check_calculate();
+            solve();
+            operator_Label.setText("-");
         }
         if(event.getSource() == mult)
         {
-            if(Calculator.getOperator() != "")
-                Check_calculate();
             Calculator.setOperator("*");
-            Check_calculate();
+            solve();
+            operator_Label.setText("*");
         }
         if(event.getSource() == div)
         {
-            if(Calculator.getOperator() != "")
-                Check_calculate();
             Calculator.setOperator("/");
-            Check_calculate();
+            solve();
+            operator_Label.setText("/");
         }
         if(event.getSource() == mod)
         {
-            if(Calculator.getOperator() != "")
-                Check_calculate();
             Calculator.setOperator("%");
-            Check_calculate();
+            solve();
+            operator_Label.setText("%");
         }
         if(event.getSource() == root)
         {
             Calculator.setOperator("sqrt");
-
-
+            solve();
+            operator_Label.setText("√");
         }
         if(event.getSource() == sqr)
         {
             Calculator.setOperator("sqr");
+            solve();
+            operator_Label.setText("X²");
         }
         if(event.getSource() == neg)
         {
-            Calculator.setOperator("+");
+            Calculator.setOperator("neg");
+            solve();
+            operator_Label.setText("+/-");
         }
         if(event.getSource() == open_par)
         {
@@ -234,14 +307,7 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
         {
             Calculator.setOperator("+");
         }
-        if(event.getSource() == equals)
-        {
-            if(Number != "")
-                Check_calculate();
-            Calculator.setArg_1(Calculator.getResult());
-            Calculator.setArg_2(0);
-            Calculator.setOperator("");
-        }
+
 
 
         //CONTROLS
@@ -250,12 +316,15 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
             Calculator.setOperator("");
             Calculator.setArg_1(0);
             Calculator.setArg_2(0);
-            Number = "";
-            result_Label.setText("0");
+            operator_Label.setText("");
+            Number = "0";
+            History = "0";
+            result_Label.setText(Number);
+            history_Label.setText(History);
         }
         if(event.getSource() == ce)
         {
-            Number = "";
+            Number = "0";
             result_Label.setText(Number);
         }
 

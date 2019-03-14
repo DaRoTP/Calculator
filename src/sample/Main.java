@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
@@ -15,7 +14,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Calculator");
         Scene scene = new Scene(root, 660, 850);
-        scene.getStylesheets().add("sample/style.css");
+        scene.getStylesheets().addAll("sample/style.css");
         Image logo_icon = new Image("sample/resources/icon.png");
         primaryStage.getIcons().add(logo_icon);
         primaryStage.setMinWidth(520);

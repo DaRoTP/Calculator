@@ -21,7 +21,8 @@ public class Calculus {
 //OPERATOR
     public String getOperator() { return operator; }
     public void setOperator(String operator) { this.operator = operator; }
-//CONSTRUCTOR
+
+    //CONSTRUCTOR
     public Calculus() {
         this.arg_1 = 0;
         this.arg_2 = 0;
@@ -42,13 +43,15 @@ public class Calculus {
             case "*":
                     return arg_1*arg_2;
             case "/":
-                    return arg_1/arg_2;
+                return arg_1/arg_2;
             case "%":
                     return arg_1%arg_2;
             case "sqrt":
                     return Math.sqrt(arg_1);
             case "sqr":
                     return arg_1*arg_1;
+            case "neg":
+                    return arg_1*(-1);
         }
         return  0;
     }
