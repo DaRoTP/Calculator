@@ -1,0 +1,154 @@
+#anchor{
+    -fx-background-color: #312d29;
+    -fx-border_radius: 0;
+    -fx-border-color: #2f2422;
+    -fx-border-width: 3;
+    -fx-effect: innershadow(one-pass-box, #2f2422, 30, 0.3, 1, 1);
+}
+
+.Cnumbers{
+    -fx-background-color: linear-gradient(#ea3c11 0%,#eb9710 78%,#fffec2 100%);
+	-fx-font-weight: bold;
+	-fx-font-size: 30;
+	-fx-background-radius: 10 10 40 40;
+	-fx-effect: innershadow(one-pass-box, #ea3c11, 20, 0.3, 1, 1);
+	-fx-effect: dropshadow(three-pass-box, #ea3c11 , 7, 0, 0, 0);
+	-fx-text-fill: linear-gradient(#fffec2 0%,#fffec2 65%,#ea3c11 100%);
+}
+.Cnumbers:hover{
+    -fx-background-color: linear-gradient(#ff7916 0%,#fed329 78%,#fffff4 100%);
+    -fx-text-fill: white;
+    -fx-effect: innershadow(one-pass-box, #ea3c11, 20, 0.3, 1, 1);
+    -fx-effect: dropshadow(three-pass-box, #ea3c11 , 7, 0, 0, 0);
+}
+.Cnumbers:pressed{
+    -fx-background-color: linear-gradient(#ff7916 0%,#ff7916 30%,#fed329 80%,#f2ba4d 100%);
+    -fx-text-fill: linear-gradient(#551808,#a1351a);
+    -fx-effect: innershadow(one-pass-box, #ea3c11, 20, 0.3, 1, 1);
+    -fx-effect: dropshadow(three-pass-box, #ea3c11 , 7, 0, 0, 0);
+}
+.Coperators{
+    -fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 90% , #982b10, #551808);
+    -fx-background-radius: 30 10 30 10;
+	-fx-font-weight: bold;
+	-fx-font-size: 30;
+	-fx-text-fill: #2d2d30;
+	-fx-border-radius: 30 10 30 10;
+    -fx-border-color: linear-gradient(#982b10, #551808);
+    -fx-border-width: 3;
+    -fx-effect: innershadow(one-pass-box, #982b10, 20, 0.3, 1, 1);
+    -fx-effect: dropshadow(three-pass-box, #551808 , 7, 0, 0, 0);
+    -fx-text-fill: linear-gradient(#fffec2 0%,#fffec2 40%,#ea3c11 100%);
+}
+.Coperators:hover{
+    -fx-background-color: radial-gradient(focus-distance 0% , center 50% 50%, radius 90% , #771f0a,#3e1105);
+    -fx-text-fill: linear-gradient(#e3e295 0%,#e3e295 40%,#aa2e0f 100%);
+}
+.Coperators:pressed{
+    -fx-background-color: radial-gradient(focus-distance 0% , center 50% 50%, radius 90% , #501507,#2e0c03);
+    -fx-text-fill: linear-gradient(#be9f73 0%,#be9f73 40%,#88140e 100%);
+    -fx-border-color: linear-gradient(#501507, #2e0c03);
+}
+.Mbuttons{
+    -fx-background-color: linear-gradient(to bottom,#776348,#5a4131);
+    -fx-background-radius: 30 30 10 10;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-border-radius: 30 30 10 10;
+    -fx-border-color: linear-gradient(#5a4131,#776348);
+    -fx-border-width: 3;
+    -fx-effect: dropshadow(three-pass-box, #342820, 7, 0, 0, 0);
+    -fx-text-fill: #fffec2;
+}
+.Mbuttons:hover{
+    -fx-background-color: linear-gradient(to bottom,#5d4d37,#483224);
+    -fx-border-color: linear-gradient(#483224,#5d4d37);
+    -fx-text-fill: #ecbf8a;
+}
+.Mbuttons:pressed{
+    -fx-background-color: linear-gradient(to bottom,#483224,#5d4d37);
+    -fx-border-color: linear-gradient(#5d4d37,#483224);
+    -fx-text-fill: #d5a164;
+}
+
+#Night_mode
+{
+    -fx-background-color: #776348;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+
+
+#equals{
+    -fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 90% , #fdf2a1, #eb9710);
+    -fx-background-radius: 20;
+	-fx-font-weight: bold;
+	-fx-font-size: 30;
+    -fx-text-fill: #ea3c11;
+    -fx-effect: innershadow(one-pass-box, #ea3c11, 20, 0.3, 1, 1);
+    -fx-effect: dropshadow(three-pass-box, #fdf2a1 , 3, 0, 0, 0);
+}
+
+#equals:hover{
+    -fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 90% , #fffce4, #ffb53e);
+    -fx-text-fill: #ff6920;
+}
+#equals:pressed{
+    -fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 90% , white, #ffd188);
+    -fx-text-fill: #ff8041;
+}
+
+#history_Label{
+    -fx-background-radius: 40 40 10 10;
+    -fx-background-color: linear-gradient(#b34b0f 0%,#c86319 78%,#ca9b41 100%);
+ 	-fx-effect: innershadow(one-pass-box, #ea3c11, 20, 0.3, 1, 1);
+ 	-fx-effect: dropshadow(three-pass-box, #ea3c11 , 7, 0, 0, 0);
+ 	-fx-text-fill: linear-gradient(#fffec2 0%,#fffec2 65%,#ea3c11 100%);
+}
+#result_Label{
+    -fx-background-color: linear-gradient(#ea6111 0%,#eb9710 78%,#f2ba4d 100%);
+	-fx-background-radius: 10 10 40 40;
+	-fx-effect: innershadow(one-pass-box, #ea3c11, 20, 0.3, 1, 1);
+	-fx-effect: dropshadow(three-pass-box, #ea3c11 , 7, 0, 0, 0);
+	-fx-text-fill: linear-gradient(#fffec2 0%,#fffec2 65%,#ea3c11 100%);
+}
+#operator_Label
+{
+    -fx-text-fill: linear-gradient(#fffec2 0%,#fffec2 65%,#ea3c11 100%);;
+}
+
+#Theme_choice{
+    -fx-background-color: linear-gradient(to bottom,#776348,#5a4131);
+    -fx-background-radius: 20 20 10 10;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-border-radius: 20 20 10 10;
+    -fx-border-color: linear-gradient(#5a4131,#776348);
+    -fx-border-width: 3;
+    -fx-effect: dropshadow(three-pass-box, #342820, 7, 0, 0, 0);
+    -fx-text-fill: #fffec2;
+    -fx-mark-color: #2f2422;
+}
+
+#Theme_choice .context-menu{
+    -fx-background-color: linear-gradient(to bottom,#776348,#5a4131);
+}
+
+#Theme_choice .menu-item:focused{
+    -fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 90% , #982b10, #551808);
+}
+
+#Theme_choice .menu-item > .label{
+    -fx-text-fill: white;
+}
+
+#Theme_choice .menu-item:focused > .label{
+    -fx-text-fill: linear-gradient(#fffec2 0%,#fffec2 65%,#ea3c11 100%);
+}
+
+.choice-box > .label{
+    -fx-text-fill: white;
+    -fx-alignment: center;
+ }

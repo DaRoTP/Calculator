@@ -91,6 +91,7 @@
 
     -fx-border-color: #e7a937;
     -fx-text-fill: #e7a937;
+
 }
 
 #history_Label{
@@ -101,3 +102,30 @@
     -fx-background-color: #e6e6e6;
     -fx-background-radius: 5;
 }
+
+#Theme_choice{
+    -fx-background-color: #bdbdbd;
+    -fx-background-radius: 5;
+    -fx-font-weight: bold;
+}
+
+#Theme_choice .context-menu{
+    -fx-background-color: #e6e6e6;;
+}
+
+#Theme_choice .menu-item:focused{
+    -fx-background-color: #bdbdbd;
+}
+
+#Theme_choice .menu-item > .label{
+    -fx-text-fill: grey;
+}
+
+#Theme_choice .menu-item:focused > .label{
+    -fx-text-fill: black;
+}
+
+.choice-box > .label{
+    -fx-text-fill: #272727;
+    -fx-alignment: center;
+ }

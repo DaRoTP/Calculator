@@ -108,3 +108,31 @@
 {
     -fx-text-fill: white;
 }
+
+
+#Theme_choice{
+    -fx-background-color: #36373a;;
+    -fx-background-radius: 5;
+    -fx-font-weight: bold;
+}
+
+#Theme_choice .context-menu{
+    -fx-background-color: #e6e6e6;;
+}
+
+#Theme_choice .menu-item:focused{
+    -fx-background-color: #36373a;;
+}
+
+#Theme_choice .menu-item > .label{
+    -fx-text-fill: grey;
+}
+
+#Theme_choice .menu-item:focused > .label{
+    -fx-text-fill: white;
+}
+
+.choice-box > .label{
+    -fx-text-fill: grey;
+    -fx-alignment: center;
+ }

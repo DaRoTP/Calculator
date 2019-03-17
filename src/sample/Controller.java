@@ -1,22 +1,29 @@
 package sample;
 
+import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Controller implements EventHandler<javafx.event.ActionEvent> {
+
+public class Controller implements EventHandler<javafx.event.ActionEvent>, Initializable {
 
                 //<!===== BUTTONS =====!>
 
     //ADDITIONAL STUFF
     @FXML private ToggleButton Night_mode;
     @FXML private AnchorPane anchor;
+    @FXML private ChoiceBox<String> Theme_choice = new ChoiceBox<>();
 
     //CALCULATOR NUMBERS
     @FXML private Button one;
@@ -30,6 +37,7 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
     @FXML private Button nine;
     @FXML private Button zero;
     @FXML private Button coma;
+    @FXML private Button pi;
 
     //CALCULATOR OPERATORS
     @FXML private Button plus;
@@ -44,8 +52,6 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
     @FXML private Button del;
     @FXML private Button c;
     @FXML private Button ce;
-    @FXML private Button open_par;
-    @FXML private Button close_par;
 
     //MEMORY BUTTONS
     @FXML private Button MR;
@@ -68,8 +74,20 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
     private String Current_StyleSheet = "sample/style.css";
     private String Theme_Default = "sample/style.css";
     private String Theme_Dark = "sample/style_2.css";
+    private String Theme_Pink = "sample/style_3.css";
+    private String Theme_Red = "sample/style_4.css";
 
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1)
+    {
+        Theme_choice.getItems().add("NIGHT MODE");
+        Theme_choice.getItems().add("DEEP PINK");
+        Theme_choice.getItems().add("FIERY RED");
+        Theme_choice.getItems().add("DEFAULT");
 
+        //Listen Fore Selection changes
+        Theme_choice.getSelectionModel().selectedItemProperty().addListener( (v,OldValue,NewValue) -> change_themes(NewValue));
+    }
 
     private void solve()
     {
@@ -132,6 +150,8 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
         }
     }
 
+
+
     //REMOVE LAST CHARACTER FROM THE STRING
     private static String removeLastChar(String str)
     {
@@ -152,7 +172,7 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
     @FXML
     public void change_modes(ActionEvent event)
     {
-        Scene scene = (Scene)(anchor.getScene());
+        Scene scene = anchor.getScene();
         if(Night_mode.isSelected())
         {
             scene.getStylesheets().remove(Current_StyleSheet);
@@ -167,6 +187,44 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
             Current_StyleSheet = Theme_Default;
             Night_mode.setStyle("-fx-background-color: #bdbdbd;");
         }
+
+    }
+
+    public void change_themes(String Theme_name)
+    {
+        Scene scene = anchor.getScene();
+        switch(Theme_name)
+        {
+            case "NIGHT MODE":
+            {
+                scene.getStylesheets().remove(Current_StyleSheet);
+                scene.getStylesheets().add(Theme_Dark);
+                Current_StyleSheet = Theme_Dark;
+            }
+            break;
+            case "DEEP PINK":
+            {
+                scene.getStylesheets().remove(Current_StyleSheet);
+                scene.getStylesheets().add(Theme_Pink);
+                Current_StyleSheet = Theme_Pink;
+            }
+            break;
+            case "FIERY RED":
+            {
+                scene.getStylesheets().remove(Current_StyleSheet);
+                scene.getStylesheets().add(Theme_Red);
+                Current_StyleSheet = Theme_Red;
+            }
+            break;
+            default:
+            {
+                scene.getStylesheets().remove(Current_StyleSheet);
+                scene.getStylesheets().add(Theme_Default);
+                Current_StyleSheet = Theme_Default;
+            }
+
+        }
+
 
     }
 
@@ -222,6 +280,11 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
         if(event.getSource() == zero)
         {
             insert_digit("0");
+            result_Label.setText(Number);
+        }
+        if(event.getSource() == pi)
+        {
+            Number = "π";
             result_Label.setText(Number);
         }
         if(event.getSource() == coma)
@@ -298,14 +361,6 @@ public class Controller implements EventHandler<javafx.event.ActionEvent> {
             Calculator.setOperator("neg");
             solve();
             operator_Label.setText("+/-");
-        }
-        if(event.getSource() == open_par)
-        {
-            Calculator.setOperator("+");
-        }
-        if(event.getSource() == close_par)
-        {
-            Calculator.setOperator("+");
         }
 
 
