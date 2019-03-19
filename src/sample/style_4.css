@@ -9,7 +9,7 @@
 .Cnumbers{
     -fx-background-color: linear-gradient(#ea3c11 0%,#eb9710 78%,#fffec2 100%);
 	-fx-font-weight: bold;
-	-fx-font-size: 30;
+	-fx-font-size: 25;
 	-fx-background-radius: 10 10 40 40;
 	-fx-effect: innershadow(one-pass-box, #ea3c11, 20, 0.3, 1, 1);
 	-fx-effect: dropshadow(three-pass-box, #ea3c11 , 7, 0, 0, 0);
@@ -31,7 +31,7 @@
     -fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 90% , #982b10, #551808);
     -fx-background-radius: 30 10 30 10;
 	-fx-font-weight: bold;
-	-fx-font-size: 30;
+	-fx-font-size: 25;
 	-fx-text-fill: #2d2d30;
 	-fx-border-radius: 30 10 30 10;
     -fx-border-color: linear-gradient(#982b10, #551808);
@@ -85,7 +85,7 @@
     -fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 90% , #fdf2a1, #eb9710);
     -fx-background-radius: 20;
 	-fx-font-weight: bold;
-	-fx-font-size: 30;
+	-fx-font-size: 25;
     -fx-text-fill: #ea3c11;
     -fx-effect: innershadow(one-pass-box, #ea3c11, 20, 0.3, 1, 1);
     -fx-effect: dropshadow(three-pass-box, #fdf2a1 , 3, 0, 0, 0);

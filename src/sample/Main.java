@@ -13,12 +13,12 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Calculator");
-        Scene scene = new Scene(root, 660, 850);
+        Scene scene = new Scene(root, 490, 710);
         scene.getStylesheets().addAll("sample/style.css");
         Image logo_icon = new Image("sample/resources/icon.png");
         primaryStage.getIcons().add(logo_icon);
-        primaryStage.setMinWidth(520);
-        primaryStage.setMinHeight(780);
+        primaryStage.setMinWidth(400);
+        primaryStage.setMinHeight(720);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

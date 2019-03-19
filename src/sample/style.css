@@ -5,15 +5,12 @@
 .Cnumbers{
     -fx-background-color: #105571;
 	-fx-font-weight: bold;
-	-fx-font-size: 30;
+	-fx-font-size: 25;
 	-fx-background-radius: 0;
 	-fx-text-fill: white;
 }
 .Cnumbers:hover{
     -fx-background-color: white;
-	-fx-font-weight: bold;
-	-fx-font-size: 30;
-	-fx-background-radius: 0;
 	-fx-text-fill: #105571;
 	-fx-border_radius: 0;
 	-fx-border-color: #105571;
@@ -27,14 +24,11 @@
     -fx-background-color: #0a2b51;
     -fx-background-radius: 0;
 	-fx-font-weight: bold;
-	-fx-font-size: 30;
+	-fx-font-size: 25;
 	-fx-text-fill: white;
 }
 .Coperators:hover{
     -fx-background-color: white;
-	-fx-font-weight: bold;
-	-fx-font-size: 30;
-	-fx-background-radius: 0;
 	-fx-text-fill: #0a2b51;
 	-fx-border_radius: 0;
 	-fx-border-color: #0a2b51;
@@ -72,26 +66,21 @@
     -fx-background-color: #f57818;
     -fx-background-radius: 0;
 	-fx-font-weight: bold;
-	-fx-font-size: 30;
+	-fx-font-size: 25;
 	-fx-border-radius: 0;
     -fx-border-color: #f57818;
 }
 
 #equals:hover{
     -fx-background-color: white;
-	-fx-font-weight: bold;
-	-fx-font-size: 30;
-	-fx-background-radius: 0;
 	-fx-text-fill: #f57818;
 	-fx-border_radius: 0;
 	-fx-border-color: #f57818;
 	-fx-border-width: 3;
 }
 #equals:pressed{
-
     -fx-border-color: #e7a937;
     -fx-text-fill: #e7a937;
-
 }
 
 #memory_Label{

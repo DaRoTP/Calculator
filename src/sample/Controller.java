@@ -372,7 +372,11 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
         if(event.getSource() == MR)
         {
             Number = Double.toString(Calculator.getMArg_1());
-            result_Label.setText(Number);
+
+            if(Calculator.getMArg_1() % 1 == 0)
+                result_Label.setText(Integer.toString((int)Calculator.getMArg_1()));
+            else
+                result_Label.setText(Double.toString(Calculator.getMArg_1()));
         }
         if(event.getSource() == MC)
         {

@@ -5,14 +5,12 @@
 .Cnumbers{
     -fx-background-color: #90cbbd;
 	-fx-font-weight: bold;
-	-fx-font-size: 30;
+	-fx-font-size: 25;
 	-fx-background-radius: 0;
 	-fx-text-fill: #2d2d30;
 }
 .Cnumbers:hover{
     -fx-background-color: #2d2d30;
-	-fx-font-weight: bold;
-	-fx-font-size: 30;
 	-fx-background-radius: 0;
 	-fx-text-fill: #90cbbd;
 	-fx-border_radius: 0;
@@ -27,13 +25,11 @@
     -fx-background-color: #556fa0;
     -fx-background-radius: 0;
 	-fx-font-weight: bold;
-	-fx-font-size: 30;
+	-fx-font-size: 25;
 	-fx-text-fill: #2d2d30;
 }
 .Coperators:hover{
     -fx-background-color: #2d2d30;
-	-fx-font-weight: bold;
-	-fx-font-size: 30;
 	-fx-background-radius: 0;
 	-fx-text-fill: #556fa0;
 	-fx-border_radius: 0;
@@ -72,7 +68,7 @@
     -fx-background-color: #e78235;
     -fx-background-radius: 0;
 	-fx-font-weight: bold;
-	-fx-font-size: 30;
+	-fx-font-size: 25;
 	-fx-border-radius: 0;
     -fx-border-color: #e78234;
     -fx-text-fill: #2d2d30;
@@ -80,9 +76,6 @@
 
 #equals:hover{
     -fx-background-color: #2d2d30;
-	-fx-font-weight: bold;
-	-fx-font-size: 30;
-	-fx-background-radius: 0;
 	-fx-text-fill: #e78235;
 	-fx-border_radius: 0;
 	-fx-border-color: #e78235;
@@ -108,7 +101,6 @@
 {
     -fx-text-fill: white;
 }
-
 
 #Theme_choice{
     -fx-background-color: #36373a;;
