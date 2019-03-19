@@ -12,6 +12,7 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 
@@ -70,6 +71,7 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
 
     //STYLE SHEETS
     private String Current_StyleSheet = "sample/style.css";
+    private String Previous_StyleSheet = "sample/style.css";
     private String Theme_Default = "sample/style.css";
     private String Theme_Dark = "sample/style_2.css";
     private String Theme_Pink = "sample/style_3.css";
@@ -125,27 +127,6 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
             result_Label.setText(Double.toString(Calculator.getArg_1()));
     }
 
-//    private void history_int_check()
-//    {
-//        if(Calculator.getArg_1() % 1 == 0)
-//        {
-//            History = (int) Calculator.getArg_1() + Calculator.getOperator();
-//            if (Calculator.getArg_2() % 1 == 0)
-//                History += (int) Calculator.getArg_2();
-//            else
-//                History += Calculator.getArg_2();
-//        }
-//        else
-//        {
-//            History = Calculator.getArg_1() + Calculator.getOperator();
-//            if (Calculator.getArg_2() % 1 == 0)
-//                History += (int) Calculator.getArg_2();
-//            else
-//                History += Calculator.getArg_2();
-//        }
-//    }
-
-
 
     //REMOVE LAST CHARACTER FROM THE STRING
     private static String removeLastChar(String str)
@@ -170,17 +151,16 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
         Scene scene = anchor.getScene();
         if(Night_mode.isSelected())
         {
+            Previous_StyleSheet = Current_StyleSheet;
             scene.getStylesheets().remove(Current_StyleSheet);
             scene.getStylesheets().add(Theme_Dark);
             Current_StyleSheet = Theme_Dark;
-            Night_mode.setStyle("-fx-background-color: #e7a937;");
         }
         else
         {
             scene.getStylesheets().remove(Current_StyleSheet);
-            scene.getStylesheets().add(Theme_Default);
-            Current_StyleSheet = Theme_Default;
-            Night_mode.setStyle("-fx-background-color: #bdbdbd;");
+            scene.getStylesheets().add(Previous_StyleSheet);
+            Current_StyleSheet = Previous_StyleSheet;
         }
 
     }
@@ -219,7 +199,6 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
             }
 
         }
-
 
     }
 
@@ -303,7 +282,10 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
             if(Calculator.getArg_1() % 1 == 0)
                 result_Label.setText(Integer.toString((int)Calculator.getArg_1()));
             else
+            {
                 result_Label.setText(Double.toString(Calculator.getArg_1()));
+            }
+
         }
         if(event.getSource() == plus)
         {
@@ -404,7 +386,11 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
             else
                 Calculator.setMArg_1(Calculator.getMArg_1()-Double.parseDouble(Number));
 
-            memory_Label.setText(Double.toString(Calculator.getMArg_1()));
+            if(Calculator.getMArg_1() % 1 == 0)
+                memory_Label.setText(Integer.toString((int)Calculator.getMArg_1()));
+            else
+                memory_Label.setText(Double.toString(Calculator.getMArg_1()));
+
         }
         if(event.getSource() == M_plus)
         {
@@ -413,7 +399,12 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
             else
                 Calculator.setMArg_1(Calculator.getMArg_1()+Double.parseDouble(Number));
 
-            memory_Label.setText(Double.toString(Calculator.getMArg_1()));
+
+            if(Calculator.getMArg_1() % 1 == 0)
+                memory_Label.setText(Integer.toString((int)Calculator.getMArg_1()));
+            else
+                memory_Label.setText(Double.toString(Calculator.getMArg_1()));
+
         }
 
 

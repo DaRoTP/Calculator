@@ -97,7 +97,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <ToggleButton fx:id="Night_mode" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#change_modes" prefHeight="23.0" prefWidth="39.0">
+                        <ToggleButton fx:id="Night_mode" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#change_modes" prefHeight="47.0" prefWidth="28.0">
                            <graphic>
                               <ImageView fitHeight="37.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -105,11 +105,14 @@
                                  </image>
                               </ImageView>
                            </graphic>
+                           <GridPane.margin>
+                              <Insets left="7.0" />
+                           </GridPane.margin>
                         </ToggleButton>
                         <ChoiceBox fx:id="Theme_choice" prefHeight="37.0" prefWidth="142.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                      </children>
                      <VBox.margin>
-                        <Insets top="-10.0" />
+                        <Insets top="-5.0" />
                      </VBox.margin>
                   </GridPane>
                   <Label fx:id="memory_Label" contentDisplay="RIGHT" prefHeight="59.0" prefWidth="2000.0" text="0" textAlignment="RIGHT">
@@ -130,18 +133,18 @@
                               <Font size="65.0" />
                            </font>
                            <padding>
-                              <Insets left="40.0" right="5.0" />
+                              <Insets left="45.0" right="10.0" />
                            </padding>
                            <StackPane.margin>
                               <Insets top="-10.0" />
                            </StackPane.margin>
                         </Label>
-                        <Label fx:id="operator_Label" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="94.0" prefWidth="83.0" textOverrun="CENTER_ELLIPSIS" StackPane.alignment="CENTER_LEFT">
+                        <Label fx:id="operator_Label" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="83.0" text="0" textOverrun="CENTER_ELLIPSIS" StackPane.alignment="CENTER_LEFT">
                            <font>
                               <Font size="45.0" />
                            </font>
                            <padding>
-                              <Insets left="5.0" right="5.0" />
+                              <Insets left="5.0" right="5.0" top="-10.0" />
                            </padding>
                         </Label>
                      </children>
