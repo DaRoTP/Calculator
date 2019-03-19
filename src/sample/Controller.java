@@ -1,6 +1,5 @@
 package sample;
 
-import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -61,14 +60,13 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
 
 
     //LABELS
-    @FXML private Label history_Label;
+    @FXML private Label memory_Label;
     @FXML private Label result_Label;
     @FXML private Label operator_Label;
 
     //VARIABLES
     private Calculus Calculator = new Calculus();
     private String Number = "";
-    private String History = "";
 
     //STYLE SHEETS
     private String Current_StyleSheet = "sample/style.css";
@@ -105,8 +103,6 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
             else
                 Calculator.setArg_2(Double.parseDouble(Number));
 
-            history_int_check();
-
         }
         else if(Calculator.getArg_1() == 0)
         {
@@ -127,28 +123,27 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
             result_Label.setText(Integer.toString((int)Calculator.getArg_1()));
         else
             result_Label.setText(Double.toString(Calculator.getArg_1()));
-        history_Label.setText(History);
     }
 
-    private void history_int_check()
-    {
-        if(Calculator.getArg_1() % 1 == 0)
-        {
-            History = (int) Calculator.getArg_1() + Calculator.getOperator();
-            if (Calculator.getArg_2() % 1 == 0)
-                History += (int) Calculator.getArg_2();
-            else
-                History += Calculator.getArg_2();
-        }
-        else
-        {
-            History = Calculator.getArg_1() + Calculator.getOperator();
-            if (Calculator.getArg_2() % 1 == 0)
-                History += (int) Calculator.getArg_2();
-            else
-                History += Calculator.getArg_2();
-        }
-    }
+//    private void history_int_check()
+//    {
+//        if(Calculator.getArg_1() % 1 == 0)
+//        {
+//            History = (int) Calculator.getArg_1() + Calculator.getOperator();
+//            if (Calculator.getArg_2() % 1 == 0)
+//                History += (int) Calculator.getArg_2();
+//            else
+//                History += Calculator.getArg_2();
+//        }
+//        else
+//        {
+//            History = Calculator.getArg_1() + Calculator.getOperator();
+//            if (Calculator.getArg_2() % 1 == 0)
+//                History += (int) Calculator.getArg_2();
+//            else
+//                History += Calculator.getArg_2();
+//        }
+//    }
 
 
 
@@ -284,7 +279,7 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
         }
         if(event.getSource() == pi)
         {
-            Number = "π";
+            Number = "3.14159265359";
             result_Label.setText(Number);
         }
         if(event.getSource() == coma)
@@ -304,14 +299,11 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
             Number = "";
             Calculator.setArg_1(Calculator.calculate(Calculator.getArg_1(),Calculator.getArg_2(),Calculator.getOperator()));
 
-            history_int_check();
-
             Calculator.setArg_2(0);
             if(Calculator.getArg_1() % 1 == 0)
                 result_Label.setText(Integer.toString((int)Calculator.getArg_1()));
             else
                 result_Label.setText(Double.toString(Calculator.getArg_1()));
-            history_Label.setText(History);
         }
         if(event.getSource() == plus)
         {
@@ -373,9 +365,8 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
             Calculator.setArg_2(0);
             operator_Label.setText("");
             Number = "0";
-            History = "0";
             result_Label.setText(Number);
-            history_Label.setText(History);
+
         }
         if(event.getSource() == ce)
         {
@@ -397,13 +388,33 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
 
         //MEMORY
         if(event.getSource() == MR)
-            System.out.println("one");
+        {
+            Number = Double.toString(Calculator.getMArg_1());
+            result_Label.setText(Number);
+        }
         if(event.getSource() == MC)
-            System.out.println("one");
+        {
+            Calculator.setMArg_1(0);
+            memory_Label.setText("0");
+        }
         if(event.getSource() == M_minus)
-            System.out.println("one");
+        {
+            if(Number == "")
+                Calculator.setMArg_1(Calculator.getMArg_1()-Calculator.getArg_1());
+            else
+                Calculator.setMArg_1(Calculator.getMArg_1()-Double.parseDouble(Number));
+
+            memory_Label.setText(Double.toString(Calculator.getMArg_1()));
+        }
         if(event.getSource() == M_plus)
-            System.out.println("one");
+        {
+            if(Number == "")
+                Calculator.setMArg_1(Calculator.getMArg_1()+Calculator.getArg_1());
+            else
+                Calculator.setMArg_1(Calculator.getMArg_1()+Double.parseDouble(Number));
+
+            memory_Label.setText(Double.toString(Calculator.getMArg_1()));
+        }
 
 
     }

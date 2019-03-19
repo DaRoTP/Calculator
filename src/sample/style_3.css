@@ -152,7 +152,7 @@
     -fx-border-color: linear-gradient(#f1284a,#b50825);
 }
 
-#history_Label{
+#memory_Label{
     -fx-background-color: linear-gradient(#5a437e 0%,#4a447e 20%,#4a447e 80%,#5a437e 100%);
     -fx-background-radius: 40;
     -fx-text-fill: #cfcfcf;

@@ -112,7 +112,7 @@
                         <Insets top="-10.0" />
                      </VBox.margin>
                   </GridPane>
-                  <Label fx:id="history_Label" contentDisplay="RIGHT" prefHeight="59.0" prefWidth="2000.0" text="0" textAlignment="RIGHT">
+                  <Label fx:id="memory_Label" contentDisplay="RIGHT" prefHeight="59.0" prefWidth="2000.0" text="0" textAlignment="RIGHT">
                      <font>
                         <Font size="41.0" />
                      </font>

@@ -5,6 +5,7 @@ public class Calculus {
     //--------- VARIABLES
     private double arg_1;
     private double arg_2;
+    private double M_arg_1;
     private double result;
     private String operator;
 
@@ -15,6 +16,9 @@ public class Calculus {
 //ARGUMENT 2
     public double getArg_2() { return arg_2; }
     public void setArg_2(double arg_2) { this.arg_2 = arg_2; }
+//M ARGUMENT 1
+    public double getMArg_1() { return M_arg_1; }
+    public void setMArg_1(double arg_1) { this.M_arg_1 = arg_1; }
 //RESULT
     public double getResult() { return result; }
     public void setResult(double result) { this.result = result; }
@@ -26,6 +30,7 @@ public class Calculus {
     public Calculus() {
         this.arg_1 = 0;
         this.arg_2 = 0;
+        this.M_arg_1 = 0;
         this.result = 0;
         this.operator = "";
     }

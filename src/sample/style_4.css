@@ -100,7 +100,7 @@
     -fx-text-fill: #ff8041;
 }
 
-#history_Label{
+#memory_Label{
     -fx-background-radius: 40 40 10 10;
     -fx-background-color: linear-gradient(#b34b0f 0%,#c86319 78%,#ca9b41 100%);
  	-fx-effect: innershadow(one-pass-box, #ea3c11, 20, 0.3, 1, 1);
