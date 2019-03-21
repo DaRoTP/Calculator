@@ -8,6 +8,7 @@
 	-fx-font-size: 25;
 	-fx-background-radius: 0;
 	-fx-text-fill: #2d2d30;
+		-fx-border-width: 0;
 }
 .Cnumbers:hover{
     -fx-background-color: #2d2d30;
@@ -27,6 +28,7 @@
 	-fx-font-weight: bold;
 	-fx-font-size: 25;
 	-fx-text-fill: #2d2d30;
+	    -fx-border-width: 0;
 }
 .Coperators:hover{
     -fx-background-color: #2d2d30;
@@ -62,6 +64,24 @@
     -fx-font-size: 15;
     -fx-cursor: hand;
 }
+#Extend
+{
+    -fx-background-color: #e7a937;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+#Extend2
+{
+    -fx-background-color: #e7a937;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+
+
 
 
 #equals{

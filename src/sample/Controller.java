@@ -3,14 +3,19 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
@@ -22,6 +27,8 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
 
     //ADDITIONAL STUFF
     @FXML private ToggleButton Night_mode;
+    @FXML private Button Extend;
+    @FXML private Button Extend2;
     @FXML private AnchorPane anchor;
     @FXML private ChoiceBox<String> Theme_choice = new ChoiceBox<>();
 
@@ -52,6 +59,18 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
     @FXML private Button del;
     @FXML private Button c;
     @FXML private Button ce;
+    @FXML private Button factorial;
+    @FXML private Button log;
+    @FXML private Button onedivx;
+    @FXML private Button xpowern;
+    @FXML private Button sin;
+    @FXML private Button cos;
+    @FXML private Button tan;
+    @FXML private Button ctg;
+    @FXML private Button hex;
+    @FXML private Button dec;
+    @FXML private Button oct;
+    @FXML private Button bin;
 
     //MEMORY BUTTONS
     @FXML private Button MR;
@@ -70,12 +89,12 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
     private String Number = "";
 
     //STYLE SHEETS
-    private String Current_StyleSheet = "sample/style.css";
-    private String Previous_StyleSheet = "sample/style.css";
-    private String Theme_Default = "sample/style.css";
-    private String Theme_Dark = "sample/style_2.css";
-    private String Theme_Pink = "sample/style_3.css";
-    private String Theme_Red = "sample/style_4.css";
+    private String Current_StyleSheet = "sample/resources/style.css";
+    private String Previous_StyleSheet = "sample/resources/style.css";
+    private String Theme_Default = "sample/resources/style.css";
+    private String Theme_Dark = "sample/resources/style_2.css";
+    private String Theme_Pink = "sample/resources/style_3.css";
+    private String Theme_Red = "sample/resources/style_4.css";
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1)
@@ -89,13 +108,31 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
         Theme_choice.getSelectionModel().selectedItemProperty().addListener( (v,OldValue,NewValue) -> change_themes(NewValue));
     }
 
+    public void ChangeScene_extended(ActionEvent event) throws IOException {
+        Parent extended_calculator = FXMLLoader.load(getClass().getResource("sample2.fxml"));
+        Scene scene = new Scene(extended_calculator);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(scene);
+        window.show();
+        scene.getStylesheets().add(Current_StyleSheet);
+    }
+
+    public void ChangeScene_standard(ActionEvent event) throws IOException {
+        Parent extended_calculator1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Scene scene = new Scene(extended_calculator1);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(scene);
+        window.show();
+        scene.getStylesheets().add(Current_StyleSheet);
+    }
+
     private void solve()
     {
         if(Calculator.getArg_1() != 0 && Calculator.getArg_2() == 0)
         {
             if(Number == "")
             {
-                if (Calculator.getOperator() == "/" || Calculator.getOperator() == "*")
+                if (Calculator.getOperator() == "/" || Calculator.getOperator() == "*" || Calculator.getOperator() == "xpowern")
                     Calculator.setArg_2(1);
                 else if(Calculator.getOperator() == "%")
                     Calculator.setArg_2(Calculator.getArg_1()+1);
@@ -112,7 +149,7 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
                 Calculator.setArg_1(0);
             else
                 Calculator.setArg_1(Double.parseDouble(Number));
-            if (Calculator.getOperator() == "/" || Calculator.getOperator() == "*")
+            if (Calculator.getOperator() == "/" || Calculator.getOperator() == "*" || Calculator.getOperator() == "xpowern")
                 Calculator.setArg_2(1);
             if(Calculator.getOperator() == "%")
                 Calculator.setArg_2(Calculator.getArg_1()+1);
@@ -336,6 +373,92 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
             solve();
             operator_Label.setText("+/-");
         }
+        if(event.getSource() == factorial)
+        {
+            Calculator.setOperator("factorial");
+            solve();
+            operator_Label.setText("!n");
+        }
+        if(event.getSource() == log)
+        {
+            Calculator.setOperator("log");
+            solve();
+            operator_Label.setText("log");
+        }
+        if(event.getSource() == onedivx)
+        {
+            Calculator.setOperator("onedivx");
+            solve();
+            operator_Label.setText("1/x");
+        }
+        if(event.getSource() == xpowern)
+        {
+            Calculator.setOperator("xpowern");
+            solve();
+            operator_Label.setText("xⁿ");
+        }
+        if(event.getSource() == sin)
+        {
+            Calculator.setOperator("sin");
+            solve();
+            operator_Label.setText("sin");
+        }
+        if(event.getSource() == cos)
+        {
+            Calculator.setOperator("cos");
+            solve();
+            operator_Label.setText("cos");
+        }
+        if(event.getSource() == tan)
+        {
+            Calculator.setOperator("tan");
+            solve();
+            operator_Label.setText("tan");
+        }
+        if(event.getSource() == ctg)
+        {
+            Calculator.setOperator("ctg");
+            solve();
+            operator_Label.setText("ctg");
+        }
+
+        //CONVERT INTEGERS
+        if(event.getSource() == hex)
+        {
+            operator_Label.setText("HEX");
+            Calculator.setArg_1((Integer.parseInt(Number)));
+
+            String hex = Integer.toHexString((int)Double.parseDouble(Number));
+            result_Label.setText("0x"+hex);
+
+        }
+        if(event.getSource() == dec)
+        {
+            operator_Label.setText("DEC");
+            Calculator.setArg_1((Integer.parseInt(Number)));
+
+            result_Label.setText(Double.toString(Calculator.getArg_1()));
+
+        }
+        if(event.getSource() == oct)
+        {
+            operator_Label.setText("OCT");
+            Calculator.setArg_1((Integer.parseInt(Number)));
+
+            String oct = Integer.toOctalString((int)Double.parseDouble(Number));
+            result_Label.setText(oct);
+
+        }
+        if(event.getSource() == bin)
+        {
+            operator_Label.setText("BIN");
+            Calculator.setArg_1((Integer.parseInt(Number)));
+
+            String bin = Integer.toBinaryString((int)Double.parseDouble(Number));
+            result_Label.setText(bin);
+
+        }
+
 
 
 

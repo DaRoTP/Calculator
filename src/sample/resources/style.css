@@ -8,6 +8,7 @@
 	-fx-font-size: 25;
 	-fx-background-radius: 0;
 	-fx-text-fill: white;
+	    -fx-border-width: 0;
 }
 .Cnumbers:hover{
     -fx-background-color: white;
@@ -15,10 +16,12 @@
 	-fx-border_radius: 0;
 	-fx-border-color: #105571;
 	-fx-border-width: 3;
+
 }
 .Cnumbers:pressed{
     -fx-border-color: #3594ba;
     -fx-text-fill: #3594ba;
+
 }
 .Coperators{
     -fx-background-color: #0a2b51;
@@ -26,6 +29,7 @@
 	-fx-font-weight: bold;
 	-fx-font-size: 25;
 	-fx-text-fill: white;
+	    -fx-border-width: 0;
 }
 .Coperators:hover{
     -fx-background-color: white;
@@ -33,6 +37,7 @@
 	-fx-border_radius: 0;
 	-fx-border-color: #0a2b51;
 	-fx-border-width: 3;
+
 }
 .Coperators:pressed{
     -fx-border-color: #18497f;
@@ -53,6 +58,22 @@
 }
 
 #Night_mode
+{
+    -fx-background-color: #bdbdbd;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+#Extend
+{
+    -fx-background-color: #e7a937;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+#Extend2
 {
     -fx-background-color: #bdbdbd;
     -fx-background-radius: 20;

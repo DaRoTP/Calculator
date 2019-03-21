@@ -57,6 +57,27 @@ public class Calculus {
                     return arg_1*arg_1;
             case "neg":
                     return arg_1*(-1);
+            case "factorial":
+            {
+                int result = 1;
+                for(int i = 1; i <= (int) arg_1; i++)
+                    result *= i;
+                return result;
+            }
+            case "log":
+                return Math.log(arg_1);
+            case "onedivx":
+                return 1/arg_1;
+            case "xpowern":
+                return Math.pow(arg_1, arg_2);
+            case "sin":
+                return Math.sin(arg_1);
+            case "cos":
+                return Math.cos(arg_1);
+            case "tan":
+                return Math.tan(arg_1);
+            case "ctg":
+                return 1/Math.tan(arg_1);
         }
         return  0;
     }

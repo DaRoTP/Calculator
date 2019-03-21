@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
@@ -32,22 +33,32 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <ToggleButton fx:id="Night_mode" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#change_modes" prefHeight="38.0" prefWidth="28.0" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                           <graphic>
-                              <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resources/light_bulb.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <GridPane.margin>
-                              <Insets left="7.0" />
-                           </GridPane.margin>
-                        </ToggleButton>
                         <ChoiceBox fx:id="Theme_choice" prefHeight="32.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                            <GridPane.margin>
                               <Insets right="7.0" />
                            </GridPane.margin></ChoiceBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <ToggleButton fx:id="Night_mode" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#change_modes" prefHeight="38.0" prefWidth="28.0">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@resources/light_bulb.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </ToggleButton>
+                              <Button fx:id="Extend2" mnemonicParsing="false" onAction="#ChangeScene_extended">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@resources/science.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
                      </children>
                      <VBox.margin>
                         <Insets top="-5.0" />

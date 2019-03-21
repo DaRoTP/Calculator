@@ -79,6 +79,22 @@
     -fx-font-size: 15;
     -fx-cursor: hand;
 }
+#Extend
+{
+    -fx-background-color: #776348;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+#Extend2
+{
+    -fx-background-color: #776348;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
 
 
 #equals{

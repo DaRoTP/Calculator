@@ -88,6 +88,28 @@
     -fx-border-width: 3;
     -fx-border-color: linear-gradient(#b12a41,#ce4a60);
 }
+#Extend
+{
+    -fx-background-color: linear-gradient(#ce4a60,#b12a41);
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-border-width: 3;
+    -fx-border-color: linear-gradient(#b12a41,#ce4a60);
+}
+#Extend2
+{
+    -fx-background-color: linear-gradient(#ce4a60,#b12a41);
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-border-width: 3;
+    -fx-border-color: linear-gradient(#b12a41,#ce4a60);
+}
 
 
 #equals{
