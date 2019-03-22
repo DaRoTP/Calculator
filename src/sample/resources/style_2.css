@@ -1,5 +1,6 @@
 #anchor{
     -fx-background-color: #2d2d30;
+    -fx-border-width: 0;
 }
 
 .Cnumbers{
@@ -14,7 +15,7 @@
     -fx-background-color: #2d2d30;
 	-fx-background-radius: 0;
 	-fx-text-fill: #90cbbd;
-	-fx-border_radius: 0;
+	-fx-border-radius: 0;
 	-fx-border-color: #90cbbd;
 	-fx-border-width: 3;
 }
@@ -34,7 +35,7 @@
     -fx-background-color: #2d2d30;
 	-fx-background-radius: 0;
 	-fx-text-fill: #556fa0;
-	-fx-border_radius: 0;
+	-fx-border-radius: 0;
 	-fx-border-color: #556fa0;
 	-fx-border-width: 3;
 }
@@ -47,6 +48,9 @@
     -fx-background-radius: 20;
     -fx-font-weight: bold;
     -fx-font-size: 15;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-text-fill: white;
 }
 .Mbuttons:hover{
     -fx-background-color: #424b5a;
@@ -63,6 +67,8 @@
     -fx-font-weight: bold;
     -fx-font-size: 15;
     -fx-cursor: hand;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
 }
 #Extend
 {
@@ -71,17 +77,19 @@
     -fx-font-weight: bold;
     -fx-font-size: 15;
     -fx-cursor: hand;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
 }
 #Extend2
 {
-    -fx-background-color: #e7a937;
+    -fx-background-color: #3c3d41;
     -fx-background-radius: 20;
     -fx-font-weight: bold;
     -fx-font-size: 15;
     -fx-cursor: hand;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
 }
-
-
 
 
 #equals{
@@ -111,11 +119,15 @@
     -fx-background-color: #36373a;
     -fx-background-radius: 5;
     -fx-text-fill: #cfcfcf;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
 }
 #result_Label{
     -fx-background-color: #3c3d41;
     -fx-background-radius: 5;
     -fx-text-fill: white;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
 }
 #operator_Label
 {
@@ -126,6 +138,8 @@
     -fx-background-color: #36373a;;
     -fx-background-radius: 5;
     -fx-font-weight: bold;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
 }
 
 #Theme_choice .context-menu{

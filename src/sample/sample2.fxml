@@ -41,9 +41,9 @@
                            <children>
                                       <ToggleButton fx:id="Night_mode" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#change_modes" prefHeight="38.0" prefWidth="28.0">
                                           <graphic>
-                                              <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                              <ImageView fx:id="light_bulb" fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                                   <image>
-                                                      <Image url="@resources/light_bulb.png" />
+                                                      <Image url="@resources/light_bulb_off.png" />
                                                   </image>
                                               </ImageView>
                                           </graphic>
