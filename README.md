@@ -1,4 +1,4 @@
-# Calcutaor
+# Calculator
 
 Simple Calculator project in JavaFX, using this project for playing around with some features of Java, JavaFX, Scene Builder.
 Inspiration for this project came from variouse places like Windows 10 and Android Calculators. My goal was to replicate functionalities of those calculators and add some of of my own.
