@@ -1,4 +1,4 @@
-package sample;
+package mainCalculator;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,11 +11,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/standardCalculator.fxml"));
         primaryStage.setTitle("Calculator");
         Scene scene = new Scene(root);
-        scene.getStylesheets().addAll("sample/resources/style.css");
-        Image logo_icon = new Image("sample/resources/icon.png");
+        scene.getStylesheets().addAll("view/stylesheets/style.css");
+        Image logo_icon = new Image("view/images/icon.png");
         primaryStage.getIcons().add(logo_icon);
         primaryStage.setMinWidth(400);
         primaryStage.setMinHeight(720);

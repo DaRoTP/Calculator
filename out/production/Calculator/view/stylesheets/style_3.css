@@ -1,0 +1,189 @@
+#anchor{
+    -fx-background-color:linear-gradient(to right bottom,#dbb4c8 0%,#c97ca3 30%,#c97ca3 100%);
+    -fx-border_radius: 0;
+    -fx-border-color: linear-gradient(#72358f,#974fa6);;
+    -fx-border-width: 6;
+}
+
+.Cnumbers{
+    -fx-background-color: linear-gradient(#d93bbc,#701293);
+	-fx-font-weight: bold;
+	-fx-font-size: 25;
+	-fx-text-fill: white;
+	-fx-border-radius: 50;
+	-fx-border-width: 3;
+	-fx-border-color: linear-gradient(#553290,#d93bbc);
+	-fx-background-radius: 50;
+	-fx-text-padding: -10;
+}
+.Cnumbers:hover{
+    -fx-background-color: linear-gradient(#bc30a2,#561170);
+	-fx-text-fill: white;
+	-fx-border_radius: 0;
+	-fx-border-color: linear-gradient(#432774,#bc30a2);
+	-fx-border-width: 3;
+	-fx-background-radius: 50;
+}
+.Cnumbers:pressed{
+    -fx-background-color: linear-gradient(#701293,#d93bbc);
+    -fx-text-fill: #c3f5e9;
+    -fx-background-radius: 50;
+    -fx-text-fill: #dbb4c8;
+    -fx-border_radius: 0;
+    -fx-border-color: linear-gradient(#d93bbc,#553290);
+    -fx-border-width: 3;
+}
+.Coperators{
+    -fx-background-color: linear-gradient(#553290,#2f206e);
+    -fx-background-radius: 0;
+	-fx-font-weight: bold;
+	-fx-font-size: 25;
+	-fx-text-fill: linear-gradient(white,#ffadf1);;
+	-fx-background-radius: 50;
+	-fx-border-radius: 50;
+	-fx-border-width: 3;
+	-fx-border-color: linear-gradient(#2f206e,#553290);
+}
+.Coperators:hover{
+    -fx-background-color: linear-gradient(#442874,#25195b);
+	-fx-text-fill: linear-gradient(white,#ffadf1);;
+	-fx-border-color: linear-gradient(#25195b,#442874);
+}
+.Coperators:pressed{
+    -fx-background-color: linear-gradient(#2f206e,#553290);
+	-fx-text-fill: linear-gradient(white,#ffadf1);;
+	-fx-border-color: linear-gradient(#553290,#2f206e);
+}
+.Mbuttons{
+    -fx-background-color: linear-gradient(#ce4a60,#b12a41);
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-border-width: 3;
+    -fx-border-color: linear-gradient(#b12a41,#ce4a60);
+    -fx-text-fill: #f97fff;
+
+}
+.Mbuttons:hover{
+    -fx-background-color: linear-gradient(#a33547,#842031);
+    -fx-border-color: linear-gradient(#842031,#a33547);
+    -fx-text-fill: #c758cd;
+}
+.Mbuttons:pressed{
+    -fx-background-color: linear-gradient(#b12a41,#ce4a60);
+    -fx-border-color: linear-gradient(#ce4a60,#b12a41);
+    -fx-text-fill: #f97fff;
+}
+
+#Night_mode
+{
+    -fx-background-color: linear-gradient(#ce4a60,#b12a41);
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-border-width: 3;
+    -fx-border-color: linear-gradient(#b12a41,#ce4a60);
+}
+#Extend2
+{
+    -fx-background-color: linear-gradient(#ce4a60,#b12a41);
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-border-width: 3;
+    -fx-border-color: linear-gradient(#b12a41,#ce4a60);
+}
+#Extend
+{
+    -fx-background-color: linear-gradient(#e7a937,#E8560C);
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-border-width: 3;
+    -fx-border-color: linear-gradient(#E8560C,#e7a937);
+}
+
+
+#equals{
+    -fx-background-color: linear-gradient(#f1284a,#b50825);
+    -fx-background-radius: 0;
+    -fx-font-weight: bold;
+    -fx-font-size: 25;
+    -fx-text-fill: linear-gradient(white,#ffadf1);;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-border-width: 3;
+    -fx-border-color: linear-gradient(#b50825,#f1284a);
+}
+
+#equals:hover{
+    -fx-background-color: linear-gradient(#c91a38,#8a1024);
+    -fx-text-fill: linear-gradient(white,#ffadf1);;
+    -fx-border-color: linear-gradient(#8a1024,#c91a38);
+}
+#equals:pressed{
+    -fx-background-color: linear-gradient(#b50825,#f1284a);
+    -fx-text-fill: linear-gradient(white,#ffadf1);;
+    -fx-border-color: linear-gradient(#f1284a,#b50825);
+}
+
+#memory_Label{
+    -fx-background-color: linear-gradient(#5a437e 0%,#4a447e 20%,#4a447e 80%,#5a437e 100%);
+    -fx-background-radius: 40;
+    -fx-text-fill: #cfcfcf;
+    -fx-border-radius: 32;
+    -fx-border-width: 4;
+    -fx-border-color: linear-gradient(#c97ca3,#dbb4c8);
+}
+#result_Label{
+    -fx-background-color: linear-gradient(#4a447e 0%,#755f98 20%,#755f98 80%,#4a447e 100%);
+    -fx-background-radius: 40;
+    -fx-text-fill: white;
+    -fx-border-radius: 36;
+    -fx-border-width: 4;
+    -fx-border-color: linear-gradient(#c97ca3,#dbb4c8);
+}
+#operator_Label
+{
+    -fx-text-fill: white;
+}
+#Theme_choice{
+    -fx-background-color: linear-gradient(#ce4a60,#b12a41);
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-border-width: 3;
+    -fx-border-color: linear-gradient(#b12a41,#ce4a60);
+    -fx-mark-color: white;
+}
+
+#Theme_choice .context-menu{
+    -fx-background-color: linear-gradient(#ce4a60,#b12a41);
+}
+
+#Theme_choice .menu-item:focused{
+    -fx-background-color: linear-gradient(#4a447e 0%,#755f98 20%,#755f98 80%,#4a447e 100%);
+}
+
+#Theme_choice .menu-item > .label{
+    -fx-text-fill: white;
+}
+
+#Theme_choice .menu-item:focused > .label{
+    -fx-text-fill: black;
+}
+
+.choice-box > .label{
+    -fx-text-fill: white;
+    -fx-alignment: center;
+ }

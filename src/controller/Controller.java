@@ -1,5 +1,6 @@
-package sample;
+package controller;
 
+import model.Calculus;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -85,8 +86,8 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
     @FXML private Label operator_Label;
 
     //IMAGES
-    private Image lightbulb_on = new Image("sample/resources/light_bulb.png");
-    private Image lightbulb_off = new Image("sample/resources/light_bulb_off.png");
+    private Image lightbulb_on = new Image("view/images/light_bulb.png");
+    private Image lightbulb_off = new Image("view/images/light_bulb_off.png");
 
     //IMAGEVIEW
     @FXML private ImageView light_bulb;
@@ -95,11 +96,11 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
     private String Number = "";
 
     //STYLE SHEETS
-    private String Current_StyleSheet = "sample/resources/style.css";
-    private String Theme_Default = "sample/resources/style.css";
-    private String Theme_Dark = "sample/resources/style_2.css";
-    private String Theme_Pink = "sample/resources/style_3.css";
-    private String Theme_Red = "sample/resources/style_4.css";
+    private String Current_StyleSheet = "view/stylesheets/style.css";
+    private String Theme_Default = "view/stylesheets/style.css";
+    private String Theme_Dark = "view/stylesheets/style_2.css";
+    private String Theme_Pink = "view/stylesheets/style_3.css";
+    private String Theme_Red = "view/stylesheets/style_4.css";
     private String ThemeName_temp ="";
 
 
@@ -118,9 +119,9 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
     }
 
     //SCENE EXTENDED
-    /* responsible for changing scenes from sample.xml to sample2.xml also applying all needed options like stylesheet*/
+    /* responsible for changing scenes from standardCalculator.xml to extendedCalculator.xml also applying all needed options like stylesheet*/
     public void ChangeScene_extended(ActionEvent event) throws IOException {
-        Parent extended_calculator = FXMLLoader.load(getClass().getResource("sample2.fxml"));
+        Parent extended_calculator = FXMLLoader.load(getClass().getResource("/view/extendedCalculator.fxml"));
         Scene scene = new Scene(extended_calculator);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(scene);
@@ -130,9 +131,9 @@ public class Controller implements EventHandler<javafx.event.ActionEvent>, Initi
     }
 
     //SCENE STANDARD
-    /* responsible for changing scenes from sample2.xml to sample.xml also applying all needed options like stylesheet*/
+    /* responsible for changing scenes from extendedCalculator.xml to sample.xml also applying all needed options like stylesheet*/
     public void ChangeScene_standard(ActionEvent event) throws IOException {
-        Parent extended_calculator1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent extended_calculator1 = FXMLLoader.load(getClass().getResource("/view/standardCalculator.fxml"));
         Scene scene = new Scene(extended_calculator1);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(scene);

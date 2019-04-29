@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor" prefHeight="710.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane fx:id="anchor" prefHeight="710.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
     <children>
         <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
@@ -43,7 +43,7 @@
                                           <graphic>
                                               <ImageView fx:id="light_bulb" fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                                   <image>
-                                                      <Image url="@resources/light_bulb_off.png" />
+                                                      <Image url="@images/light_bulb_off.png" />
                                                   </image>
                                               </ImageView>
                                           </graphic>
@@ -52,7 +52,7 @@
                                  <graphic>
                                     <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@resources/science.png" />
+                                          <Image url="@images/science.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
